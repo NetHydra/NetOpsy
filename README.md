@@ -3,3 +3,8 @@
 ## NetOpsy
 
 > NetOpsy is part of NetHydra (Formely known as HydraPWK)
+
+
+### Building NetOpsy
+
+![NetOpsy build system](/assets/netopsy-buildsysten.png)
