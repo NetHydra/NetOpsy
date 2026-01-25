@@ -1,7 +1,7 @@
 ### Building your own NetOpsy image
 
 > [!IMPORTANT]
-> The build script is not yet released we will release it soon.
+> The build script is not yet released, we will release it soon.
 >
 >  _Thanks for your patient._
 
