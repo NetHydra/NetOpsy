@@ -1,5 +1,11 @@
 ### Building your own NetOpsy image
 
+> [!IMPORTANT]
+> The build script is not yet released we will release it soon.
+>
+>  _Thanks for your patient._
+
+
 ![NetOpsy build system](/assets/netopsy-buildsysten.png)
 
 
