@@ -8,3 +8,4 @@
 ### Documentations
 
 [build](https://github.com/NetHydra/NetOpsy/blob/main/docs/build.md) - Build your own NetOpsy image.
+[Installation](https://github.com/NetHydra/NetOpsy/blob/main/docs/install.md) - Installation instructions to install NetOpsy on the device.
