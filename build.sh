@@ -20,7 +20,7 @@ export NETHYDRA_MIRROR_KEYRING="joe-archive.key.gpg"
 
 install_dep() {
 	echo "Installing dependencies"
-	sudo apt install binfmt-support \
+	apt install binfmt-support \
 		debootstrap \
 		tar \
 		binutils \
@@ -74,6 +74,6 @@ else
 fi
 
 mkdir -p ${BUILD_DIR}
-sudo debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
-sudo . $READ_PATH/setup-base-fs.sh
+debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
+. $READ_PATH/setup-base-fs.sh
 
