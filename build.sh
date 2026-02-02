@@ -20,7 +20,7 @@ export NETHYDRA_MIRROR_KEYRING="joe-archive.key.gpg"
 
 install_dep() {
 	echo "Installing dependencies"
-	apt install binfmt-support \
+	sudo apt install binfmt-support \
 		debootstrap \
 		tar \
 		binutils \
