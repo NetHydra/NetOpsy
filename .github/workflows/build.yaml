@@ -17,4 +17,4 @@ jobs:
         run: chmod +x build.sh
 
       - name: Build NetOpsy
-        run: ./build.sh
+        run: sudo ./build.sh
