@@ -74,6 +74,6 @@ else
 fi
 
 mkdir -p ${BUILD_DIR}
-debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
-. $READ_PATH/setup-base-fs.sh
+sudo debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
+sudo . $READ_PATH/setup-base-fs.sh
 
