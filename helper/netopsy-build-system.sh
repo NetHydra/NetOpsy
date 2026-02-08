@@ -20,4 +20,10 @@ exec_in_chroot() {
 		"$@"
 }
 
+if mountpoint -q ${BUILD_DIR}/dev; then
+	:
+else
+	echo "[*] Mount the sys part to chroot"
+	mount_part
+fi
 exec_in_chroot apt update
