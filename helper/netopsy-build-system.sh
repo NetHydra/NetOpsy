@@ -17,7 +17,7 @@ exec_in_chroot() {
 		HOME=/root	\
 		TERM="$TERM"	\
 		PATH=/usr/bin:/usr/sbin	\
-		/bin/bash "$@"
+		"$@"
 }
 
-
+exec_in_chroot apt update
