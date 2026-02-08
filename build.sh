@@ -76,6 +76,8 @@ fi
 if [[ ! -e ${BUILD_DIR}/etc/os-release ]]; then
 	mkdir -p ${BUILD_DIR}
 	debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
+	. $READ_PATH/setup-base-fs.sh
+	. $READ_PATH/helper/netopsy-build-system.sh
 else
 	read -p "Do you want to clean your current build? (y/n)" RESP
 	if [ "$RESP" = "y" ]; then
