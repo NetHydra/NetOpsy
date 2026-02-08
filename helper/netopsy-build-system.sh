@@ -31,3 +31,14 @@ packages=$(cat ${READ_PATH}/packages/*.packages)
 for pkg_list in "${packages[@]}"; do
 	exec_in_chroot apt install -y $pkg_list
 done
+
+echo "[*] Cleaning chroot."
+
+clean_dir=("
+	"/var/lib/apt/lists/*"
+	"/var/lib/cache/apt/*"
+	")
+
+for rdir in "${clean_dir[@]}"; do
+	rm -rf $rdir
+done
