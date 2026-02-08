@@ -26,4 +26,4 @@ else
 	mount_part
 fi
 cat ${READ_PATH}/packages/tools-forensic.packages
-exec_in_chroot echo "Hallo im chroot"
+exec_in_chroot 
