@@ -11,6 +11,7 @@ ASCII=$(cat "$READ_PATH/assets/ascii.txt")
 export CODENAME="sana"
 DEBIAN_BRANCH="trixie"
 DEBIAN_MIRROR="http://deb.debian.org/debian"
+NETHYDRA_VERSION="2026.1a"
 
 # set global variable
 # Currently only support arm64 architectures
@@ -20,7 +21,7 @@ export NETHYDRA_MIRROR="http://repo.rstrike.my.id/$CODENAME/"
 export BUILD_WITH_DESKTOP="false"
 export NETHYDRA_MIRROR_KEYRING="joe-archive.key.gpg"
 export READ_PATH=$READ_PATH
-
+export NETHYDRA_VERSION=$NETHYDRA_VERSION
 install_dep() {
 	echo "Installing dependencies"
 	apt install binfmt-support \
@@ -81,6 +82,7 @@ if [[ ! -e ${BUILD_DIR}/etc/os-release ]]; then
 	debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
 	. $READ_PATH/setup-base-fs.sh
 	. $READ_PATH/helper/netopsy-build-system.sh
+	. $READ_PATH/helper/build-archive.sh
 else
 	read -p "Do you want to clean your current build? (y/n)" RESP
 	if [ "$RESP" = "y" ]; then
@@ -97,10 +99,12 @@ else
 		debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
                 . $READ_PATH/setup-base-fs.sh
                 . $READ_PATH/helper/netopsy-build-system.sh
+		. $READ_PATH/helper/build-archive.sh
 	else
 		echo "Continue current build"
 		# we will assume the partition has been mounted
 		. $READ_PATH/setup-base-fs.sh
 		. $READ_PATH/helper/netopsy-build-system.sh
+		. $READ_PATH/helper/build-archive.sh
 	fi
 fi
