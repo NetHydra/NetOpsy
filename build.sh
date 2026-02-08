@@ -74,7 +74,8 @@ else
 fi
 
 if [[ ! -e ${BUILD_DIR}/etc/os-release ]]; then
-	echo "Hallo world"
+	mkdir -p ${BUILD_DIR}
+	debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
 else
 	read -p "Do you want to clean your current build? (y/n)" RESP
 	if [ "$RESP" = "y" ]; then
@@ -86,6 +87,11 @@ else
 			umount ${BUILD_DIR}/sys
 			umount ${BUILD_DIR}/run
 		fi
+		echo "Removing NetOpsy"
+		rm -rfv ${BUILD_DIR}
+		debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
+                . $READ_PATH/setup-base-fs.sh
+                . $READ_PATH/helper/netopsy-build-system.sh
 	else
 		echo "Continue current build"
 		# we will assume the partition has been mounted
@@ -94,5 +100,5 @@ else
 	fi
 fi
 
-mkdir -p ${BUILD_DIR}
-debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
+#mkdir -p ${BUILD_DIR}
+#debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
