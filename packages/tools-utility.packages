@@ -1,3 +1,5 @@
 binutils
 zip
 unzip
+bash-completion
+net-tools
