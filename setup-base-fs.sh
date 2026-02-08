@@ -2,8 +2,13 @@
 
 set -e
 
-echo "[*] Extracting base fs..."
-chroot ${BUILD_DIR} /debootstrap/debootstrap --second-stage
+
+if [[ ! -e ${BUILD_DIR}/debootstrap ]]; then
+	echo "Continue current build"
+else
+	echo "[*] Extracting base fs..."
+	chroot ${BUILD_DIR} /debootstrap/debootstrap --second-stage
+fi
 
 cat <<EOF> ${BUILD_DIR}/etc/apt/sources.list.d/nethydra-mirror.sources
 Types: deb
