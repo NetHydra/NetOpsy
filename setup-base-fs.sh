@@ -2,6 +2,7 @@
 
 set -e
 
+cp /usr/bin/qemu-aarch64-static ${BUILD_DIR}/usr/bin/
 
 if [[ ! -e ${BUILD_DIR}/debootstrap ]]; then
 	echo "Continue current build"
