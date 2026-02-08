@@ -25,5 +25,9 @@ else
 	echo "[*] Mount the sys part to chroot"
 	mount_part
 fi
-cat ${READ_PATH}/packages/tools-forensic.packages
-exec_in_chroot 
+
+packages=$(cat ${READ_PATH}/packages/*.packages)
+
+for pkg_list in "${packages[@]}"; do
+	exec_in_chroot apt install -y $pkg_list
+done
