@@ -11,3 +11,5 @@ startxfce4 &
 EOF
         chmod +x ${BUILD_DIR}/etc/skel.vnc/xstartup
 }
+
+vncserver_setup
