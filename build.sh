@@ -80,8 +80,8 @@ else
 	if [ "$RESP" = "y" ]; then
 		echo "Rebuilding NetOpsy"
 		if mountpoint -q ${BUILD_DIR}/dev; then
-			umount ${BUILD_DIR}/dev
 			umount ${BUILD_DIR}/dev/pts
+			umount ${BUILD_DIR}/dev
 			umount ${BUILD_DIR}/proc
 			umount ${BUILD_DIR}/sys
 			umount ${BUILD_DIR}/run
