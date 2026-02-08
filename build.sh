@@ -11,12 +11,15 @@ ASCII=$(cat "$READ_PATH/assets/ascii.txt")
 export CODENAME="sana"
 DEBIAN_BRANCH="trixie"
 DEBIAN_MIRROR="http://deb.debian.org/debian"
+
+# set global variable
 # Currently only support arm64 architectures
 export ARCH=arm64
 export BUILD_DIR="/opt/NetOpsy/build/$ARCH"
 export NETHYDRA_MIRROR="http://repo.rstrike.my.id/$CODENAME/"
 export BUILD_WITH_DESKTOP="false"
 export NETHYDRA_MIRROR_KEYRING="joe-archive.key.gpg"
+export READ_PATH=$READ_PATH
 
 install_dep() {
 	echo "Installing dependencies"

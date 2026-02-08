@@ -3,7 +3,6 @@
 set -e
 
 mkdir -pv ${BUILD_DIR}/{dev,proc,sys,run}
-
 mount_part() {
 	mount -v --bind /dev ${BUILD_DIR}/dev
 	mount -vt devpts devpts -o gid=5,mode=0620 ${BUILD_DIR}/dev/pts
@@ -26,4 +25,5 @@ else
 	echo "[*] Mount the sys part to chroot"
 	mount_part
 fi
-exec_in_chroot apt update
+cat ${READ_PATH}/packages/tools-forensic.packages
+exec_in_chroot echo "Hallo im chroot"
