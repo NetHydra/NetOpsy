@@ -19,7 +19,7 @@ export ARCH=arm64
 export BUILD_DIR="/opt/NetOpsy/build/$ARCH"
 export NETHYDRA_MIRROR="http://repo.rstrike.my.id/$CODENAME/"
 export BUILD_WITH_DESKTOP="false"
-export NETHYDRA_MIRROR_KEYRING="joe-archive.key.gpg"
+export NETHYDRA_MIRROR_KEYRING="hydrapwk.key.gpg"
 export READ_PATH=$READ_PATH
 export NETHYDRA_VERSION=$NETHYDRA_VERSION
 install_dep() {
