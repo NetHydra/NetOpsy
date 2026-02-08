@@ -101,6 +101,3 @@ else
 		. $READ_PATH/helper/netopsy-build-system.sh
 	fi
 fi
-
-#mkdir -p ${BUILD_DIR}
-#debootstrap --foreign --components main,contrib,non-free,non-free-firmware --arch ${ARCH} $DEBIAN_BRANCH ${BUILD_DIR} $DEBIAN_MIRROR
