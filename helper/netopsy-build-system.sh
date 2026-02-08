@@ -26,6 +26,8 @@ else
 	mount_part
 fi
 
+echo "[*] Import keyring"
+cp ${READ_PATH}/keyrings/* ${BUILD_DIR}/usr/share/keyrings
 packages=$(cat ${READ_PATH}/packages/*.packages)
 
 for pkg_list in "${packages[@]}"; do
