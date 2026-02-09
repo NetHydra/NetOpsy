@@ -44,3 +44,9 @@ clean_dir=("
 for rdir in "${clean_dir[@]}"; do
 	rm -rf $rdir
 done
+
+# Fixing resolv
+
+cat <<EOF> ${BUILD_DIR}/etc/resolv.conf
+nameserver 8.8.8.8
+EOF
