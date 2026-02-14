@@ -28,6 +28,12 @@ fi
 
 echo "[*] Import keyring"
 cp ${READ_PATH}/keyrings/* ${BUILD_DIR}/usr/share/keyrings
+
+echo "[*] Installing packages"
+if [[ "${BUILD_WITH_DESKTOP}" == "true" ]]; then
+	exec_in_chroot apt install netopsy-default-desktop
+fi
+
 packages=$(cat ${READ_PATH}/packages/*.packages)
 
 for pkg_list in "${packages[@]}"; do
