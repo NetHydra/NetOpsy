@@ -33,6 +33,10 @@ install_dep() {
 
 usage(){
 	echo "Usage $0"
+	echo "	--codename	NetHydra release branch"
+	echo "	--with-desktop	Build with desktop image true or false. default is false (no desktop)"
+	echo "	--build-dir	Specify Build/Work dir."
+	echo "	--help		Show options"
 	exit 1
 }
 
@@ -57,6 +61,11 @@ while [ "$#" -gt 0 ]; do
 		--build-dir)
 			[ -z "$2" ] && echo "Error: please specify for --build-dir" && usage
 			BUILD_DIR="$2"
+			shift 2
+			;;
+		--keyring)
+			[ -z "$2" ] && echo "Error: e.g hydrapwk.key.gpg" && usage
+			NETHYDRA_MIRROR_KEYRING="$2"
 			shift 2
 			;;
 		--help|-h)
