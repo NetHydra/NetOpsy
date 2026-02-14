@@ -37,6 +37,7 @@ usage(){
 	echo "	--with-desktop	Build with desktop image true or false. default is false (no desktop)"
 	echo "	--build-dir	Specify Build/Work dir."
 	echo "	--keyring	Use your own NetHydra Mirror keyring"
+	echo "	--nethydra-mirror	Use your own NetHydra mirror."
 	echo "	--help		Show options"
 	exit 1
 }
