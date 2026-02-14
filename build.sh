@@ -36,6 +36,7 @@ usage(){
 	echo "	--codename	NetHydra release branch"
 	echo "	--with-desktop	Build with desktop image true or false. default is false (no desktop)"
 	echo "	--build-dir	Specify Build/Work dir."
+	echo "	--keyring	Use your own NetHydra Mirror keyring"
 	echo "	--help		Show options"
 	exit 1
 }
@@ -66,6 +67,11 @@ while [ "$#" -gt 0 ]; do
 		--keyring)
 			[ -z "$2" ] && echo "Error: e.g hydrapwk.key.gpg" && usage
 			NETHYDRA_MIRROR_KEYRING="$2"
+			shift 2
+			;;
+		--nethydra-mirror)
+			[ -z "$2" ] && echo "Error: Plese specify your NetHydra mirror."
+			NETHYDRA_MIRROR="$2"
 			shift 2
 			;;
 		--help|-h)
