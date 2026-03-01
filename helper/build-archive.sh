@@ -18,7 +18,11 @@ fi
 BUILD_ARCHIVE="${READ_PATH}/build_arhive/"
 OUTPUT="${BUILD_ARCHIVE}/netopsy-${NETHYDRA_VERSION}-${ARCHIVE_ARCH}.tar.xz"
 
+if [[ "${BUILD_WITH_DESKTOP}" == "true" ]]; then
+	OUTPUT="${BUILD_ARCHIVE}/netopsy-${NETHYDRA_VERSION}-${ARCHIVE_ARCH}-desktop.tar.xz"
+fi
+
 echo "[*] Creating image archive at $OUTPUT"
 mkdir -p $BUILD_ARCHIVE
-tar -C "${BUILD_DIR}" -cJf "$OUTPUT" .
+XZ_OPT=-9 tar -C "${BUILD_DIR}" -cJf "$OUTPUT" .
 
