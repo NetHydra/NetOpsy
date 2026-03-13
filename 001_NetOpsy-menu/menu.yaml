@@ -1,0 +1,51 @@
+## NetOpsy Menu Applications format (Category)
+
+
+## Begin NIST SP 800-86 Methodlogy
+
+- Category: NIST SP 800-86 Collection
+  Name: 0001-Collection
+  Applications:
+    - gparted
+    - guymager
+    - dd
+    - wireshark
+    - mount
+    - tcpdump
+  Include:
+    - Image Acquisition:
+      - guymager
+      - autopsy
+
+- Category: NIST SP 800-86 Examination
+  Name: 0002-Examination
+  Applications:
+    - tsk_image_info
+    - exiftool
+    - exifLooter
+    - pdf-parser
+    - binwalk
+    - undbx
+    - photorec
+    - autopsy
+
+- Category: NIST SP 800-86 Analysis
+  Name: 0003-Analysis
+  Applications:
+    - radare2
+    - binwalk
+    - ghidra
+    - wireshark
+    - volatility3
+    - rekal
+    - aircrack-ng
+    - john
+    - hydra
+
+- Category: NIST SP 800-86 Reporting
+  Name: 0004-Reporting
+  Applications:
+    - libreoffice
+    - maltego
+
+## Begin NetOpsy OSINT
