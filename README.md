@@ -12,10 +12,10 @@
 
 
 #### Roadmap
-- [ ] Introduction announcement
+- [X] Introduction announcement
 - [ ] Documentation
    - [X] Build docs
    - [ ] User guide
 - [X] Build system
-- [ ] System integration
-- [ ] Release
+- [X] System integration
+- [X] Release
